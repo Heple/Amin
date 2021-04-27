@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@android:color/transparent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_gravity="center" android:gravity="center"
+    android:layout_height="300dp">
+<ImageView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:src="@drawable/users"
+    android:id="@+id/user"
+    />
+    <EditText
+        android:layout_width="200dp"
+        android:id="@+id/acction"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/user"/>
+<ImageView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_below="@id/acction"
+    android:layout_marginTop="20dp"
+    android:id="@+id/lock"
+    android:src="@drawable/lock"/>
+    <EditText
+        android:layout_width="200dp"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/acction"
+        android:layout_marginTop="25dp"
+        android:id="@+id/password"
+        android:layout_toRightOf="@id/lock"
+        />
+    <EditText
+        android:layout_marginTop="25dp"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/lock"
+        android:id="@+id/code"/>
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:id="@+id/code_img"
+        android:layout_marginTop="26dp"
+        android:layout_below="@id/password"
+        android:layout_toRightOf="@id/code"/>
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/code"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login"
+        android:id="@+id/login"
+        android:text="登录"/>
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/code_img"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/resg"
+        android:id="@+id/register"
+        android:layout_marginLeft="85dp"
+        android:layout_toRightOf="@id/login"
+        android:text="注册"/>
+</RelativeLayout>

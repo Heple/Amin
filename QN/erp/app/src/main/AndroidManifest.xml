@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.erp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/main_icon"
+        android:label="旅盟云管家"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@drawable/main_icon"
+        android:supportsRtl="true"
+        tools:replace="android:label"
+        android:theme="@style/Theme.Erp">
+        <activity android:name=".WebActivity"
+            android:theme="@style/Theme.Web"></activity>
+        <activity
+            android:name=".ContextActivity"
+            android:theme="@style/Theme.Context"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

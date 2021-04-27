@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Erp" parent="Theme.AppCompat.NoActionBar">
+        <!-- Primary brand color. -->
+        <!-- Customize your theme here. -->
+       <item name="android:windowBackground">@drawable/back</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
+<!--        <item name="windowNoTitle">true</item>-->
+    </style>
+    <style name="my_dialog" parent="android:Theme.Material.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/index</item>
+    </style>
+    <style name="Theme.Context" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+<style name="Theme.Web" parent="Theme.AppCompat.Light.NoActionBar">
+</style>
+</resources>

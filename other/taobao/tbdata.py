@@ -4,13 +4,14 @@ import json
 import re
 import time
 import random
-import xl
 import pandas as pd
-import Proxies
+
+from other.taobao import tblogin
+from other.taobao.Proxies import Proxies
+
 res=requests.Session()
 GOODS_EXCEL_PATH=r'C:\Users\Administrator\Desktop\data_cat.xlsx'
 COOKIES_FILE_PATH = '../../../../Erp/taobao_cookies.txt'
-print(Proxies.proxies)
 my_taobao_url = 'http://i.taobao.com/my_taobao.htm'
 heawder={
     'referer':'https://s.taobao.com/search',
@@ -26,13 +27,13 @@ def load_data(s,q):
     print(res.cookies)
     search_url = f'https://s.taobao.com/search?data-key=s&data-value={s*44}&ajax=false&callback=jsonp744&q={q}&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20210323&ie=utf8&bcoffset=0&ntoffset=6&p4ppushleft=l,48&s={(s-1)*44}'
     try:
-        reust=res.get(url=search_url,headers=heawder,proxies=Proxies.proxies)
+        reust=res.get(url=search_url,headers=heawder)
         match_re = re.search(r'g_page_config = (.*?)}};', reust.text)
         print(match_re.group(1))
         return match_re.group(1) + '}}'
     except Exception as e:
         print('失败,正在重试')
-        lg = xl.Login(res)
+        lg = tblogin.Login(res)
         lg.getstpath()
         lg.setcookies()
         with open(COOKIES_FILE_PATH, 'r+', encoding='utf-8') as file:

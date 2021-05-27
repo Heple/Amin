@@ -82,7 +82,7 @@ stt=''
 for i in Klist:
     stt=stt+'"'+i+'",'
 print(stt)
-jsjile=open('pt.js','r').read()
+jsjile=open('../pt.js', 'r').read()
 js='var a=['+stt+']\n'+jsjile
 print(js)
 resulr=execjs.compile(js)
